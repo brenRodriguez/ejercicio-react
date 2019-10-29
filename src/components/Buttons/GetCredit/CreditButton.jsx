@@ -6,7 +6,7 @@ export default function CreditButton() {
   return (
     <div className={style.credit}>
       <button className={style.creditBtn} type="button">
-        Obtené Crédito sisi
+        Obtené Crédito
       </button>
     </div>
   );

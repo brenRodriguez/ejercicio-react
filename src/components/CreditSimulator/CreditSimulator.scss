@@ -13,9 +13,25 @@
         min-height: 300px;
         display: flex;
         flex-direction: column;
+        text-transform: uppercase;
+        justify-content: space-between;
+        padding: 50px 50px 0 50px;
+        .totalAmount,
+        .term{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        input{
+            border: 1px solid white;
+            background: #003B67;
+            height: 30px;
+        }
     }
     .buttonsContainer{
         display: flex;  
         justify-content: space-between;
+        padding: 0 50px;
     }
+       
 }

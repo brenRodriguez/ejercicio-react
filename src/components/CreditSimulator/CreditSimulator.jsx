@@ -35,9 +35,10 @@ function CreditSimulator() {
     <div className={style.main}>
       <Title title="Simulá tu crédito" />
       <div className={style.container}>
-        <TotalAmount />
-
-        <Term />
+        <div className={style.sliders}>
+          <TotalAmount />
+          <Term />
+        </div>
         <FixedFee />
       </div>
       <div className={style.buttonsContainer}>
