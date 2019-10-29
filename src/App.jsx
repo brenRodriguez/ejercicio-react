@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import HelloWorld from './components/hello-world';
+
+import CreditSimulator from './components/CreditSimulator/CreditSimulator';
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class App extends Component {
   }
 
   render() {
-    return <HelloWorld title="Hello from React webpack" />;
+    return <CreditSimulator />;
   }
 }
 

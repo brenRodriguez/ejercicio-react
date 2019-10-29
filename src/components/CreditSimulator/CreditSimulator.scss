@@ -1,0 +1,21 @@
+.main{
+    background: #094F85;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    color: white;
+    padding: 60px;
+    font-family: 'Montserrat', sans-serif;
+    .container{
+        background: #003B67;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    .buttonsContainer{
+        display: flex;  
+        justify-content: space-between;
+    }
+}
