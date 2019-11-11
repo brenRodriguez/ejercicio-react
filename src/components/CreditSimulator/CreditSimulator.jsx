@@ -1,6 +1,4 @@
 import React from 'react';
-// import Slider, { createSliderWithTooltip } from 'rc-slider';
-// import 'rc-slider/assets/index.css';
 
 import style from './CreditSimulator.scss';
 import Title from '../Title/Title';
@@ -10,51 +8,46 @@ import FixedFee from '../FixedFee/FixedFee';
 import CreditButton from '../Buttons/GetCredit/CreditButton';
 import Instalment from '../Buttons/GetCredit/Instalment';
 
-/* const style = { width: 600, margin: 50 };
-
-function log(value) {
-  console.log(value); //eslint-disable-line
-}
-*/
 export default class CreditSimulator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = {
+      amountValue: 0,
+      termValue: 0,
+    };
   }
 
-  /* onSliderChange = value => {
-    this.setState(
-      {
-        value,
-      },
-      () => {
-        console.log(this.state.value);
-      },
-    );
-  }; */
-  // replace for loanCalculator
-
-  // loanDuration
-  // detail installments
-
-  /*
   handleAmount = value => {
-    console.log(value)
-  }
+    this.setState({
+      amountValue: value,
+    });
+  };
+
   handleTerm = value => {
-    console.log(value)
-  }
-*/
+    this.setState({
+      termValue: value,
+    });
+  };
+
+  numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  calculate = () => {
+    if (this.state.amountValue > 0 || this.state.termValue > 0) {
+      const value = (this.state.amountValue / this.state.termValue).toFixed(2);
+      return this.numberWithCommas(value);
+    }
+  };
+
   render() {
     return (
       <div className={style.main}>
         <Title title="Simulá tu crédito" />
         <div className={style.container}>
           <div className={style.sliders}>
-            <TotalAmount handleSubmitButton={this.handleAmount} />
-            <Term handleSubmitButton={this.handleTerm} />
+            <TotalAmount onHandleSliderText={this.handleAmount} />
+            <Term onHandleSliderText={this.handleTerm} />
           </div>
-          <FixedFee />
+          <FixedFee feeValue={this.calculate()} />
         </div>
         <div className={style.buttonsContainer}>
           <CreditButton /> <Instalment />
