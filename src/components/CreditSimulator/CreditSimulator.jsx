@@ -7,6 +7,7 @@ import Term from '../Term/Term';
 import FixedFee from '../FixedFee/FixedFee';
 import CreditButton from '../Buttons/GetCredit/CreditButton';
 import Instalment from '../Buttons/GetCredit/Instalment';
+import { numberWithCommas } from "./../../utils/utils.js"
 
 export default class CreditSimulator extends React.Component {
   constructor(props) {
@@ -17,24 +18,16 @@ export default class CreditSimulator extends React.Component {
     };
   }
 
-  handleAmount = value => {
+  handleAmount = key => e => {
     this.setState({
-      amountValue: value,
+      [key]: e,
     });
   };
-
-  handleTerm = value => {
-    this.setState({
-      termValue: value,
-    });
-  };
-
-  numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
   calculate = () => {
     if (this.state.amountValue > 0 || this.state.termValue > 0) {
       const value = (this.state.amountValue / this.state.termValue).toFixed(2);
-      return this.numberWithCommas(value);
+      return numberWithCommas(value);
     }
   };
 
@@ -44,8 +37,8 @@ export default class CreditSimulator extends React.Component {
         <Title title="Simulá tu crédito" />
         <div className={style.container}>
           <div className={style.sliders}>
-            <TotalAmount onHandleSliderText={this.handleAmount} />
-            <Term onHandleSliderText={this.handleTerm} />
+            <TotalAmount onHandleSliderText={this.handleAmount("amountValue")} />
+            <Term onHandleSliderText={this.handleAmount("termValue")} />
           </div>
           <FixedFee feeValue={this.calculate()} />
         </div>
