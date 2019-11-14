@@ -25,9 +25,12 @@ export default class CreditSimulator extends React.Component {
   };
 
   calculate = () => {
-    if (this.state.amountValue > 0 || this.state.termValue > 0) {
+    if (this.state.amountValue > 0 && this.state.termValue > 0) {
       const value = (this.state.amountValue / this.state.termValue).toFixed(2);
       return numberWithCommas(value);
+    }
+    else{
+      return "";
     }
   };
 

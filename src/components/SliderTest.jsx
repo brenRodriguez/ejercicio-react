@@ -9,7 +9,7 @@ export default class SliderTest extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: 0,
     };
   }
 
@@ -18,10 +18,6 @@ export default class SliderTest extends React.Component {
       value,
     });
     this.props.onHandleSliderText(value);
-    /*if (currentValue === '' || regex.test(currentValue)) {
-      this.setState({ value: currentValue });
-      handleSubmitButton(value);
-    }*/
   };
 
   render() {
