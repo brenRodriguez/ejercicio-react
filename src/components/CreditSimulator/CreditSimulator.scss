@@ -41,6 +41,12 @@
             position: absolute !important;
             left: 116px !important;
         }
+        .amount, 
+        .terms{
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
     }
     .buttonsContainer{
         display: flex;  

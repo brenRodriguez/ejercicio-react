@@ -14,10 +14,13 @@ export default class Term extends React.Component {
   render() {
     const { onHandleSliderText } = this.props;
     return (
-      <div className={style.term}>
-        <span>Plazo</span>
-        <SliderTest onHandleSliderText={onHandleSliderText} min={1} max={24} />
-      </div>
+      <React.Fragment>
+        <div className={style.term}>
+          <span>Plazo</span>
+          <SliderTest onHandleSliderText={onHandleSliderText} min={3} max={24} />
+        </div>
+        <div className={style.terms}><span>3</span><span>24</span></div>
+      </React.Fragment>
     );
   }
 }

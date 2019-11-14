@@ -15,14 +15,17 @@ export default class TotalAmount extends React.Component {
   render() {
     const { onHandleSliderText } = this.props;
     return (
-      <div className={style.totalAmount}>
-        <span>Monto Total</span>
-        <SliderTest
-          onHandleSliderText={onHandleSliderText}
-          min={5000}
-          max={50000}
-        />
-      </div>
+      <React.Fragment>
+        <div className={style.totalAmount}>
+          <span>Monto Total</span>
+          <SliderTest
+            onHandleSliderText={onHandleSliderText}
+            min={5000}
+            max={50000}
+          />
+        </div>
+        <div className={style.amount}><span>$5.000</span><span>$50.000</span></div>
+      </React.Fragment>
     );
   }
 }

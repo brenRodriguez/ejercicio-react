@@ -7,7 +7,7 @@ export default function FixedFee({ feeValue }) {
   return (
     <div className={style.containerFee}>
       <span>Cuota fija por mes</span>
-      <span className={style.feeVal}>{feeValue}</span>
+      <span className={style.feeVal}>{`$ ${feeValue}`}</span>
     </div>
   );
 }
