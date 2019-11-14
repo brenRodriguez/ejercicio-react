@@ -34,8 +34,8 @@ export default class CreditSimulator extends React.Component {
   render() {
     return (
       <div className={style.main}>
-        <Title title="Simulá tu crédito" />
         <div className={style.container}>
+        <Title title="Simulá tu crédito" />
           <div className={style.sliders}>
             <TotalAmount onHandleSliderText={this.handleAmount("amountValue")} />
             <Term onHandleSliderText={this.handleAmount("termValue")} />

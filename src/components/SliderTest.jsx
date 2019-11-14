@@ -14,7 +14,6 @@ export default class SliderTest extends React.Component {
   }
 
   onSliderChange = value => {
-    console.log("onSliderChange2 from sliderTest")
     this.setState({
       value,
     });
@@ -28,7 +27,7 @@ export default class SliderTest extends React.Component {
   render() {
     return (
       <div style={{ margin: 0 }}>
-        <input value={this.state.value} />
+        <input value={this.state.value} id={style.inputStyle} />
         <div className={style.sliderContainer}>
           <Slider
             min={this.props.min}
