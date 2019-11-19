@@ -1,8 +1,9 @@
 .containerFee{
     display: flex;
     justify-content: space-between;
-    height: 20%;
     align-items: center;
+    background: #00355D;
+    padding: 8px 16px;
     .feeVal{
         font-size: 40px;
     }

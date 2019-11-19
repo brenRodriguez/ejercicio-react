@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
+import style from './components/CreditSimulator/CreditSimulator.scss';
+
 import CreditSimulator from './components/CreditSimulator/CreditSimulator';
 
 class App extends Component {
@@ -10,7 +12,7 @@ class App extends Component {
   }
 
   render() {
-    return <CreditSimulator />;
+    return <div id={style.app}> <CreditSimulator /></div>;
   }
 }
 
